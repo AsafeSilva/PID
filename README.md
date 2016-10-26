@@ -11,10 +11,6 @@ acordo com os ganhos (kP, kI, kD) fornecidos.
 
 - A classe PID permite três tipos de Contrutores:
 
-```
-PID myPID; 
-// Com este contrutor os ganhos kP, kI e kD são iniciadas com 0.
-```
 
 ```
 // Com este contrutor os ganhos kP, kI e kD são iniciadas com 0.
@@ -61,12 +57,12 @@ void addInput(float _newInput);
 ```
 
 ```
-// Método que realiza cálculos e retorna a saída do PID
+// Método que realiza cálculos e retorna a saída do PID (P + I + D)
 float compute();
 ```
 
 ```
-// Métodos que retorna parametros do PID
+// Métodos que retornam parâmetros do PID
 float getKp();
 float getKi();
 float getKd();
