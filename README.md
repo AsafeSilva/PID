@@ -102,4 +102,29 @@ void serialEvent(){
 }
 ```
 
+## Processing
+
+Para usar o supervisório com o *Processing*, faça o [download](https://processing.org/download/) e instale-o devidamente (*next, next, finish* basicamente).
+
+O supervisório funcionando pode ser visualizado na figura abaixo.
+
+![Screenshot](tunings.png)
+
+Este código implementa basicamente duas classes: `Windows` e `Graphic`
+
+A classe `Windows`, resumidamente, é responsável por criar as "janelas", ou seja, a área onde os gráficos serão desenhados.
+Já a classe `Graphic`, como o nome já sugere, é responsável por desenhar os gráficos na janela (`Windows`). Portanto no seu contrutor deve ser passado como parâmetro um objeto da classe `Windows`. 
+
+**Todos os contrutores e métodos da classe são explicados no próprio código**
+
+Após implementar a classe `PIDProcessing` devidamente, se não desejar realizar alterações na interface gráfica, basta ajustar, os limites (mínimo e máximo) nos contrutores da classe `Graphic` de acordo com os valores do Arduino. Por exemplo:
+
+```
+/* cria objeto da classe Graphic:
+   nomeDaReferencia = new Graphic (object Windows, cor, minValue, maxValue); */
+Output   = new Graphic(janelaOutput, red, 0, 255);
+Input    = new Graphic(janelaInput,  blue, 0, 1023);
+SetPoint = new Graphic(janelaInput,  green, 0, 1023);
+```
+
 
