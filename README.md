@@ -1,6 +1,6 @@
 # PID + Processing
 
-Ajuste e visualize com a tela de supervisório seu sistema com PID!
+Controle, ajuste e visualize com a tela de supervisório seu sistema com PID!
 
 # PID.h
 
