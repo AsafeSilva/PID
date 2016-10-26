@@ -74,3 +74,32 @@ float getSetPoint();
 ```
 
 ## PIDProcessing.h
+
+Já esta classe é usada quando quer processar o PID e também enviar e receber dados do *Processing*.
+Ela herda da class `PID.h`, portanto todos os métodos contidos em `PID.h` também podém ser acessados por ela, sem a necessidade de instanciar uma nova referência para a classe `PID.h`.
+
+A classe `PIDProcessing.h` possui o mesmo construtor da `PID.h` que já foi explicado anteriormente.
+E possui os seguintes métodos:
+
+```
+void sendToGraphics(int input, int output);
+```
+Este método envia os valores de entrada e saída para o *Processing* (via Serial, portanto o Arduino deve estar conectado ao PC), para serem "desenhados" no Gráfico.
+
+
+```
+void receiveProcessing(char inChar);
+```
+Este método recebe os parâmetros setados no *Processing* (kP, kI, kD, setPoint) e atualiza as variáveis da classe `PID.h`.
+É aconselhado que ele seja "chamado" dentro da função `serialEvent()` do Arduino. Por exemplo:
+
+```ruby
+void serialEvent(){
+    while(Serial.available()){
+    	char inChar = (char)Serial.read();
+    	myPid.receiveProcessing(inChar);
+    }
+}
+```
+
+
