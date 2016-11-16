@@ -45,7 +45,7 @@ float PID::compute(){
 	lastTime = millis();
 	float dTime = time/1000.0f;
 
-	// cauculate error
+	// calculate error
 	error = (setPoint - newInput);
 
 	// Implementation of P
