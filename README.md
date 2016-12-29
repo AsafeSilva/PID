@@ -9,11 +9,11 @@ de um controlador PID simples implementada em C++.
 Esta classe recebe a leitura (do sensor de temperatura, por exemplo), e calcula a saída P.I.D. de 
 acordo com os ganhos (kP, kI, kD) fornecidos.
 
-- A classe PID permite três tipos de Contrutores:
+- A classe PID permite três tipos de Construtores:
 
 
 ```
-// Com este contrutor os ganhos kP, kI e kD são iniciadas com 0.
+// Com este construtor os ganhos kP, kI e kD são iniciadas com 0.
 PID myPID; 
 ```
 
