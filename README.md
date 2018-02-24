@@ -89,7 +89,7 @@ void receiveProcessing(char inChar);
 Este método recebe os parâmetros setados no *Processing* (kP, kI, kD, setPoint) e atualiza as variáveis da classe `PID.h`.
 É aconselhado que ele seja "chamado" dentro da função `serialEvent()` do Arduino. Por exemplo:
 
-```ruby
+```c++
 void serialEvent(){
     while(Serial.available()){
     	char inChar = (char)Serial.read();
